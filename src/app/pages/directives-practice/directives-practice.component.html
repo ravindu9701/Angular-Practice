@@ -1,0 +1,74 @@
+<!-- Basic custom directive -->
+
+<!-- <div appTest1="blue">Hover over me</div> -->
+
+<!-- Custom validation directive -->
+<!-- <input
+  type="password"
+  name="password"
+  [(ngModel)]="user.password"
+  #password="ngModel"
+  appCustomValidate="[A-Za-z]+[0-9]+"
+  required
+/>
+
+<div *ngIf="password.invalid && (password.dirty || password.touched)">
+  <div *ngIf="password.hasError('required')">Password is required.</div>
+  <div *ngIf="password.hasError('passwordPattern')">Password must contain letters and numbers.</div>
+</div> -->
+
+<!-- Auto Focus directive -->
+<!-- <input type="text" placeholder="Auto-focused input" appAutofocus>
+<input type="text"> -->
+
+<!-- Draggable directive -->
+<!-- <div class="draggable-box" appDraggable></div> -->
+
+<!-- Clicked outside directive -->
+<!-- <div appClickOutside (clickedOutside)="closeDropdown()">
+    <button (click)="toggleDropdown()">Toggle Dropdown</button>
+    <div *ngIf="dropdownOpen" class="dropdown">
+      Dropdown content
+    </div>
+  </div> -->
+
+  <!-- Structural Directives -->
+<!-- <button (click)="condition = !condition">toggle</button>
+
+<p *appIf="condition" >hello world</p> -->
+
+<!-- Getting values back with Structural Directives -->
+<!-- <ul *appTrigonometry="60; sin as s; cos as c; tan as t">
+    <li>sin(30°): {{ s }}</li>
+    <li>cos(30°): {{ c }}</li>
+    <li>tan(30°): {{ t }}</li>
+  </ul> -->
+
+  <!-- Host Binding and Host Listner Directives -->
+<!-- <input type="text" appHost [highlightColor]="'lightgreen'" /> -->
+
+<!-- Structural Directive Example -->
+<!-- <div *ngFor="let item of items; let i = index" >
+  <div *appChangeDetectionTest="i % 2 === 0">
+    {{ item }}
+  </div>
+ </div> -->
+
+ <!-- Input with multiple param -->
+ <!-- <div *math="10; exponent: 3; test: 5; let input; 
+            let exponent = exponent; let r = root;
+            let p = power; let t = test; let ctr = controller;">
+            test: {{t}}
+    input: {{ input }}, exponent = {{ exponent }}<br/>
+    root = {{ input }}<sup>1/{{ exponent }}</sup> = {{ r }}<br/>
+    power = {{ input }}<sup>{{ exponent }}</sup> = {{ p }}
+
+    <button (click)="ctr.increment()">Increment</button>
+</div> -->
+
+<div *carousel="let source from images; let title = title; let ctrl = controller">
+  <button (click)="ctrl.previous()">Previous</button>
+  <img [src]="source" [title]="title">
+  <!-- <p>{{title}}</p> -->
+  <button (click)="ctrl.next()">Next</button>
+</div>
